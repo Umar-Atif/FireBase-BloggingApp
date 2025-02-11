@@ -43,3 +43,69 @@ h1 {
     background-color: white;
     padding: 20px 50px;
 }
+
+.card2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    border: 0.3px solid rgb(206, 206, 206);
+    margin: 20px;
+    padding: 20px;
+    gap: 10px;
+    border-radius: 20px;
+    overflow: scroll;
+}
+
+.card2 .a img {
+    border-radius: 20px;
+}
+
+.card2 .b p{
+    color: rgb(75, 75, 75);
+}
+
+.heading{
+    padding: 20px 50px;
+}
+
+#form {
+    background-color: white;
+    padding: 30px;
+    margin: 75px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form input {
+    padding: 15px 60% 15px 25px;
+    border-radius: 10px;
+    border: 0.2px solid grey;
+}
+
+#form textarea {
+    padding: 15px 61.5% 20% 25px;
+    border-radius: 10px;
+    border: 0.2px solid grey;
+}
+
+#form input:hover {
+    border: 1px solid #7b00ff;
+}
+
+#form input:focus {
+    border: 1px solid #7b00ff;
+    outline: none;
+}
+
+#form button {
+    border-radius: 15px;
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    background-color: #7b00ff;
+}

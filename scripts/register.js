@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 import { auth, db } from "./firebaseconfig.js";
 
 const form = document.querySelector('#form');
@@ -29,27 +29,29 @@ document.getElementById("upload_widget").addEventListener("click", function(even
 form.addEventListener('submit', event => {
     event.preventDefault()
 
-    // console.log(email.value)
-    // console.log(password.value)
-    // console.log(fullName.value)
+    console.log(email.value)
+    console.log(password.value)
+    console.log(fullName.value)
 
     createUserWithEmailAndPassword(auth, email.value, password.value)
     .then(async (userCredential) => {
         const user = userCredential.user;
-        // console.log(user);
-        // Swal.fire({
-        //     title: "Registration successful! Welcome aboard!",
-        //     position: "top"
-        // }); 
-        window.location = 'dashboard.html'
+        console.log(user);
+
+        // window.location = 'dashboard.html'
 
         try {
-            const docRef = await addDoc(collection(db, "users"), {
+            const docRef = await addDoc(collection(db, "usersInfo"), {
                 fullName: fullName.value,
                 email: email.value,
                 profileImage: picURL,
-                uid: user.uid                                                                           
+                uid: user.uid,
+                date:  Timestamp.fromDate(new Date())                                    
             });
+            Swal.fire({
+                title: "Registration Successfull. Welcome!",
+                position: "top"
+            })
             console.log("Document written with ID: ", docRef.id);
         } catch (e) {
             console.error("Error adding document: ", e);
