@@ -15,10 +15,6 @@ form.addEventListener('submit', event => {
     .then((userCredential) => {
         const user = userCredential.user;
         // console.log(user);
-        // Swal.fire({
-        //     title: "Login successful! Welcome Back!",
-        //     position: "top"
-        // });
         window.location = 'dashboard.html'
     })
     .catch((error) => {

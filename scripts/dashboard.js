@@ -1,12 +1,13 @@
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 import { auth, db } from "./firebaseconfig.js";
-import { collection, getDocs, query, where, orderBy, addDoc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { collection, getDocs, query, where, orderBy, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+
+const globalArr = [];
 
 const userName = document.querySelector("#user-name");
 const userProfile = document.querySelector("#user-profile");
 const logoutBtn = document.querySelector("#logoutBtn");
 
-const globalArr = [];
 
 logoutBtn.addEventListener('click', event => {
     event.preventDefault();
@@ -61,13 +62,20 @@ const output = document.querySelector("#output");
 form.addEventListener('submit', async event => {
     event.preventDefault();
     try {
+        const user = await getData()
+
         const docRef = await addDoc(collection(db, "blog"), {
             description: description.value,
             placeholder: placeholder.value,
             uid: auth.currentUser.uid,
-            date: new Date()
+            date: Timestamp.fromDate(new Date()),
+            profileImg: user.profileImage || './assets/image-default.png',
+            fullName: user.fullName,
+            email: user.email,
         });
+        console.log(user)
         await getBlog();
+        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
         console.error("Error adding document: ", e);
     }
@@ -101,9 +109,12 @@ function renderBlog() {
             <div class="b">
             <h3>${item.placeholder}</h3>
             <p><b>${user.fullName} - ${date}</b></p> 
-            <p>${item.description}</p>
+            <p>${item.description}</p> 
             </div>
         </div>
         `;
     });
+
+    placeholder.value = ''
+    description.value = ''
 }
