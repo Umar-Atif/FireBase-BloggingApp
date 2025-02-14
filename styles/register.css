@@ -12,11 +12,6 @@ nav{
     margin: 0;
 }
 
-.div2 {
-    display: inline;
-    
-}
-
 nav a {
     text-decoration: none;
     color: white;
@@ -64,4 +59,62 @@ form button {
     border: none;
     color: white;
     background-color: #7b00ff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav h2 {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    div {
+        margin-top: 100px;
+        height: auto;
+    }
+
+    form {
+        padding: 50px 30px;
+    }
+
+    form input {
+        padding: 5px 30px 5px 10px;
+    }
+
+    form button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 10px;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+
+    form {
+        padding: 30px 20px;
+    }
+
+    form input {
+        padding: 5px 20px 5px 5px;
+    }
+
+    form button {
+        padding: 8px 15px;
+    }
 }

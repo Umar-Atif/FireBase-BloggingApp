@@ -1,0 +1,125 @@
+body {
+    background-color: #e6e6e6;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+    color: white;
+    background-color: #7b00ff;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    background-color: white;
+    padding: 20px 50px;
+}
+
+div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    height: 18vh;
+}
+
+form {
+    background-color: white;
+    padding: 100px 85px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+form input {
+    padding: 5px 120px 5px 15px;
+    border-radius: 10px;
+    border: 0.2px solid grey;
+    width: 100%;
+}
+
+form input:hover {
+    border: 1px solid #7b00ff;
+}
+
+form input:focus {
+    border: 1px solid #7b00ff;
+    outline: none;
+}
+
+form button {
+    border-radius: 15px;
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    background-color: #7b00ff;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav h2 {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    div {
+        margin-top: 100px;
+        height: auto;
+    }
+
+    form {
+        padding: 50px 30px;
+    }
+
+    form input {
+        padding: 5px 30px 5px 10px;
+    }
+
+    form button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 10px;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+
+    form {
+        padding: 30px 20px;
+    }
+
+    form input {
+        padding: 5px 20px 5px 5px;
+    }
+
+    form button {
+        padding: 8px 15px;
+    }
+}

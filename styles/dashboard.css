@@ -114,3 +114,83 @@ h1 {
     color: white;
     background-color: #7b00ff;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    nav .div1, nav .div2 {
+        width: 100%;
+        text-align: left;
+    }
+
+    nav h2 {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    form {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #output {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card2 {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input, form textarea {
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    form button {
+        padding: 8px;
+    }
+
+    .card2 {
+        width: 95%;
+    }
+}

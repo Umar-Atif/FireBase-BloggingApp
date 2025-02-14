@@ -39,7 +39,8 @@ onAuthStateChanged(auth, async (user) => {
         }
 
         await getBlog();
-    } else {
+    } 
+    else {
         window.location = "login.html";
     }
 });
