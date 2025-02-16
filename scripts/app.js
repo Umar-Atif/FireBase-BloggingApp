@@ -29,12 +29,23 @@ function renderBlog() {
             <h3>${item.placeholder}</h3>
             <p><b>${item.fullName} - ${date}</b></p> 
             <p>${item.description}</p>
-            <a target="_blank" href="singleblog.html?userID=${item.uid}" style="color: #7b00ff; text-decoration: none  ;">see all from this user</a>
+            <button id="single-blog" data-uid="${item.uid}">see all from this user</button>
             </div>
         </div>
         `;
+
+        const button = document.querySelectorAll("#single-blog")
+        button.forEach(item => {
+            item.addEventListener('click' , (event) => {
+                const uid = event.target.getAttribute('data-uid')
+                localStorage.setItem("uid", uid)
+                window.location = './singleblog.html';
+                console.log(uid)
+            })
+        })
         // console.log(item.uid)
     })
     console.log('Globar Array Worked')
 }
+
 getBlog()

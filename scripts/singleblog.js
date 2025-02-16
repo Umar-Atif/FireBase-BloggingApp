@@ -1,8 +1,10 @@
 import { db } from "./firebaseconfig.js";
 import { collection, getDocs, query, where, orderBy } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
-const userID = new URLSearchParams(window.location.search).get('userID');            
-console.log(userID)                        
+// const userID = new URLSearchParams(window.location.search).get('userID');            
+// console.log(userID)                        
+const userID = localStorage.getItem("uid")
+console.log(userID)
 
 const output = document.querySelector("#output");
 const output2 = document.querySelector("#output2");

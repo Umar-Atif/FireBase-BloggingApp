@@ -2,6 +2,10 @@ body {
     background-color: #e6e6e6;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 nav {
     display: flex;
     align-items: center;
@@ -17,6 +21,8 @@ nav a {
     color: white;
     cursor: pointer;
 }
+
+
 
 h1 {
     background-color: white;
